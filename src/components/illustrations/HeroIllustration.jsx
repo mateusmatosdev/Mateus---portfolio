@@ -27,7 +27,7 @@ export default function HeroIllustration() {
       whileInView={shouldReduceMotion ? undefined : 'visible'}
       viewport={{ once: true, amount: 0.35 }}
     >
-      <motion.g fill="none" stroke="#2454E0" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" variants={drawingVariants}>
+      <motion.g fill="none" stroke="rgb(var(--color-brand))" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" variants={drawingVariants}>
         <motion.path d="M42 159 L180 226 L319 158 L181 91 Z" variants={pathVariants} />
         <motion.path d="M43 163 L43 174 L180 240 L180 229" variants={pathVariants} />
         <motion.path d="M184 229 L319 163 L319 174 L181 240" variants={pathVariants} />
@@ -45,8 +45,8 @@ export default function HeroIllustration() {
         <motion.path d="M378 19 L378 15 M378 57 L378 53 M361 36 L357 36 M399 36 L395 36 M366 24 L363 21 M393 51 L390 48 M390 24 L393 21 M363 51 L366 48" variants={pathVariants} />
         <motion.path d="M18 79 L22 84 L28 86 L22 88 L18 94 L16 88 L10 86 L16 84 Z" strokeWidth="2.2" variants={pathVariants} />
       </motion.g>
-      <motion.text x="29" y="76" fill="#2454E0" fontFamily="Special Elite, monospace" fontSize="17" initial={shouldReduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.35 }}>nuvem</motion.text>
-      <motion.text x="304" y="272" fill="#2454E0" fontFamily="Special Elite, monospace" fontSize="17" initial={shouldReduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9, duration: 0.35 }}>servidor</motion.text>
+      <motion.text x="29" y="76" fill="rgb(var(--color-brand))" fontFamily="Special Elite, monospace" fontSize="17" initial={shouldReduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.35 }}>nuvem</motion.text>
+      <motion.text x="304" y="272" fill="rgb(var(--color-brand))" fontFamily="Special Elite, monospace" fontSize="17" initial={shouldReduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9, duration: 0.35 }}>servidor</motion.text>
     </motion.svg>
   )
 }

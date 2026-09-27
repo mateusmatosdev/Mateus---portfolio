@@ -25,18 +25,17 @@ export default function About() {
         </div>
         <div className="space-y-4 opacity-85">
           <p>
-            Profissional de Tecnologia da Informação com experiência em Infraestrutura de TI, Suporte, Redes e
-            Automação, com direcionamento de carreira para DevOps. Conhecimentos em Git, CI/CD, Jenkins, GitHub
-            Actions, GitLab CI, Linux, Python, Java e automação de workflows com N8N.
+            Profissional de TI com mais de 4 anos de experiência em Infraestrutura, Suporte e Redes, com prática
+            ativa em DevOps. Atua em ambientes corporativos com administração de Windows e Linux, Active Directory,
+            Windows Server, redes Cisco e suporte de hardware e software.
           </p>
           <p>
-            Experiência profissional construída em ambientes de infraestrutura e suporte, aliada à formação em
-            Ciência e Tecnologia e conhecimentos em redes de computadores. Interesse e atuação no desenvolvimento
-            de soluções de automação, integração, versionamento de código e melhoria de processos.
+            Experiência com Microsoft Azure e ambientes híbridos, Git e práticas de CI/CD com Jenkins, GitHub Actions
+            e GitLab CI. Também utiliza N8N, Python e Java em automação e integração, com atenção a DevSecOps,
+            segurança da informação e gestão de incidentes.
           </p>
           <div className="!opacity-100 mt-2 px-5 py-4 bg-brandSoft border-l-[3px] border-brand rounded-md font-medium">
-            Formado com base sólida em suporte e redes, atuação em DevOps aplicando automação e boas
-            práticas de entrega de software.
+            Foco em DevOps, CI/CD e automação, apoiado por experiência prática em infraestrutura corporativa e cloud híbrida.
           </div>
         </div>
       </div>

@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#F7F1E4',
-        surface: '#FFFFFF',
-        ink: '#1C2333',
-        muted: '#6B6558',
-        brand: '#2454E0',
-        brandDark: '#1E46C4',
-        brandSoft: '#DCE6FF',
-        line: '#E4DBC8',
+        bg: 'rgb(var(--color-bg) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        muted: 'rgb(var(--color-muted) / <alpha-value>)',
+        brand: 'rgb(var(--color-brand) / <alpha-value>)',
+        brandDark: 'rgb(var(--color-brand-dark) / <alpha-value>)',
+        brandSoft: 'rgb(var(--color-brand-soft) / <alpha-value>)',
+        line: 'rgb(var(--color-line) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Special Elite"', 'monospace'],

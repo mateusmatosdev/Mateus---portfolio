@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+
+const THEME_STORAGE_KEY = 'portfolio-theme'
+
+function getInitialTheme() {
+  const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY)
+  if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
 
 const LINKS = [
   { href: '#inicio', label: 'Início' },
@@ -14,7 +22,13 @@ const LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#inicio')
+  const [theme, setTheme] = useState(getInitialTheme)
   const shouldReduceMotion = useReducedMotion()
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme)
+  }, [theme])
 
   useEffect(() => {
     const sections = LINKS
@@ -58,14 +72,26 @@ export default function Navbar() {
           ))}
         </div>
 
-        <motion.button
-          className="lg:hidden text-ink"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-          whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </motion.button>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            className="p-2 text-ink hover:text-brand transition-colors"
+            onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
+            aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
+            aria-pressed={theme === 'dark'}
+            title={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <motion.button
+            className="lg:hidden text-ink"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+            whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </motion.button>
+        </div>
       </nav>
 
       <AnimatePresence initial={false}>
@@ -83,8 +109,8 @@ export default function Navbar() {
               href={l.href}
               onClick={() => setOpen(false)}
               aria-current={activeLink === l.href ? 'location' : undefined}
-              className="py-2.5 text-sm font-medium opacity-80"
-              whileHover={shouldReduceMotion ? undefined : { x: 4, color: '#2454E0' }}
+              className="py-2.5 text-sm font-medium opacity-80 hover:text-brand"
+              whileHover={shouldReduceMotion ? undefined : { x: 4 }}
               whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
             >
               {l.label}

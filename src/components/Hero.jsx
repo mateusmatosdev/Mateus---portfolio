@@ -1,11 +1,11 @@
 import { motion, useReducedMotion } from 'motion/react'
 
 const STACK = [
-  'Git · Jenkins · GitHub Actions · GitLab CI',
-  'Linux · Windows avançado',
-  'Python · Java',
-  'N8N · automação de workflows',
-  'Redes Cisco · infraestrutura corporativa',
+  'DevOps · CI/CD com Jenkins, GitHub Actions e GitLab CI',
+  'Git · automação de workflows com N8N',
+  'Microsoft Azure · ambientes híbridos on-premises e cloud',
+  'DevSecOps · segurança e gestão de incidentes',
+  'Python · Java · Linux',
 ]
 
 export default function Hero() {
@@ -19,9 +19,9 @@ export default function Hero() {
         <motion.div initial={initial} animate={{ opacity: 1, y: 0 }} transition={introTransition}>
           <div className="kicker">Portfólio profissional</div>
           <h1 className="text-4xl sm:text-6xl font-bold">Mateus Matos</h1>
-          <div className="text-muted text-xl mt-3">DevOps · Infraestrutura de TI · Cloud & Automação</div>
+          <div className="text-muted text-xl mt-3">DevOps · Analista de Infraestrutura · CI/CD · Azure</div>
           <p className="mt-5 max-w-[52ch] opacity-85">
-            Profissional de TI com experiência em infraestrutura, suporte e redes, atuando com foco em Cloud Computing, automação de processos, controle de versão e integração contínua.
+            Profissional de TI com mais de 4 anos de experiência em Infraestrutura, Suporte e Redes, com prática ativa em DevOps. Atuação em ambientes corporativos com Windows, Linux, Azure, Active Directory, CI/CD e automação.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <motion.a

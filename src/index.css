@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+  --color-bg: 247 241 228;
+  --color-surface: 255 255 255;
+  --color-ink: 28 35 51;
+  --color-muted: 107 101 88;
+  --color-brand: 36 84 224;
+  --color-brand-dark: 30 70 196;
+  --color-brand-soft: 220 230 255;
+  --color-line: 228 219 200;
+}
+
+:root.dark {
+  color-scheme: dark;
+  --color-bg: 20 24 33;
+  --color-surface: 31 37 49;
+  --color-ink: 236 239 246;
+  --color-muted: 174 183 199;
+  --color-brand: 135 164 255;
+  --color-brand-dark: 108 142 249;
+  --color-brand-soft: 39 51 76;
+  --color-line: 57 67 86;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -17,7 +41,7 @@ section[id] {
   z-index: 60;
   width: 100%;
   height: 3px;
-  background: #2454E0;
+  background: rgb(var(--color-brand));
   transform-origin: left;
   pointer-events: none;
 }
@@ -34,9 +58,9 @@ section[id] {
   z-index: -1;
   pointer-events: none;
   background-image:
-    radial-gradient(rgba(36, 84, 224, 0.11) 0.7px, transparent 0.8px),
-    linear-gradient(rgba(36, 84, 224, 0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 84, 224, 0.018) 1px, transparent 1px);
+    radial-gradient(rgb(var(--color-brand) / 0.11) 0.7px, transparent 0.8px),
+    linear-gradient(rgb(var(--color-brand) / 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--color-brand) / 0.018) 1px, transparent 1px);
   background-size: 22px 22px, 88px 88px, 88px 88px;
   filter: blur(0.35px);
   opacity: 0.72;
@@ -47,7 +71,7 @@ section[id] {
   content: '';
   position: absolute;
   inset: -12%;
-  background: linear-gradient(118deg, transparent 25%, rgba(36, 84, 224, 0.055) 43%, transparent 61%);
+  background: linear-gradient(118deg, transparent 25%, rgb(var(--color-brand) / 0.055) 43%, transparent 61%);
   background-size: 190% 190%;
   filter: blur(32px);
   animation: paper-light-drift 24s ease-in-out infinite alternate;
@@ -85,7 +109,7 @@ h1, h2, h3 {
 
 header {
   border: 0 !important;
-  background: rgba(247, 241, 228, 0.94) !important;
+  background: rgb(var(--color-bg) / 0.94) !important;
 }
 
 header::after {
@@ -95,12 +119,12 @@ header::after {
   bottom: 0;
   left: 0;
   height: 2px;
-  background: rgba(36, 84, 224, 0.58);
+  background: rgb(var(--color-brand) / 0.58);
   clip-path: polygon(0 35%, 12% 55%, 24% 30%, 36% 58%, 49% 35%, 61% 60%, 74% 28%, 87% 54%, 100% 32%, 100% 100%, 0 100%);
 }
 
 header nav > div:first-child > div:first-child {
-  color: #2454E0;
+  color: rgb(var(--color-brand));
   background: transparent;
   border: 2px solid currentColor;
   border-radius: 45% 55% 48% 52%;
@@ -119,7 +143,7 @@ header nav a::after {
   bottom: -4px;
   left: 0;
   height: 2px;
-  background: #2454E0;
+  background: rgb(var(--color-brand));
   border-radius: 50%;
   transform: scaleX(0) rotate(-2deg);
   transform-origin: left;
@@ -132,7 +156,7 @@ header nav a:focus-visible::after {
 }
 
 header nav a[aria-current="location"] {
-  color: #2454E0;
+  color: rgb(var(--color-brand));
   opacity: 1;
 }
 
@@ -149,11 +173,11 @@ header nav a[aria-current="location"]::after {
   width: 48px;
   height: 48px;
   place-items: center;
-  color: #2454E0;
-  background: #DCE6FF;
-  border: 1.5px solid #2454E0;
+  color: rgb(var(--color-brand));
+  background: rgb(var(--color-brand-soft));
+  border: 1.5px solid rgb(var(--color-brand));
   border-radius: 6px 10px 5px 8px;
-  box-shadow: 3px 3px 0 rgba(36, 84, 224, 0.18);
+  box-shadow: 3px 3px 0 rgb(var(--color-brand) / 0.18);
 }
 
 .section h2 {
@@ -169,7 +193,7 @@ header nav a[aria-current="location"]::after {
   bottom: 0;
   left: 0;
   height: 3px;
-  background: rgba(36, 84, 224, 0.8);
+  background: rgb(var(--color-brand) / 0.8);
   border-radius: 50%;
   transform: rotate(-1.5deg);
 }
@@ -186,23 +210,23 @@ header nav a[aria-current="location"]::after {
   bottom: -5px;
   left: 0;
   height: 3px;
-  background: #2454E0;
+  background: rgb(var(--color-brand));
   border-radius: 50%;
   transform: rotate(-1deg);
 }
 
 #inicio .mt-8 a {
   border-radius: 5px 11px 6px 9px;
-  box-shadow: 3px 3px 0 rgba(36, 84, 224, 0.2);
+  box-shadow: 3px 3px 0 rgb(var(--color-brand) / 0.2);
   transition: box-shadow 180ms ease, background-color 180ms ease;
 }
 
 #inicio .mt-8 a:hover {
-  box-shadow: 5px 5px 0 rgba(36, 84, 224, 0.22);
+  box-shadow: 5px 5px 0 rgb(var(--color-brand) / 0.22);
 }
 
 #inicio .mt-8 a[href="#contato"] {
-  border: 1.5px solid #2454E0;
+  border: 1.5px solid rgb(var(--color-brand));
 }
 
 .person-stage {
@@ -216,7 +240,7 @@ header nav a[aria-current="location"]::after {
   z-index: 2;
   top: 22px;
   right: 0;
-  color: #2454E0;
+  color: rgb(var(--color-brand));
   font-family: 'Special Elite', monospace;
   font-size: 22px;
   line-height: 1;
@@ -245,7 +269,7 @@ header nav a[aria-current="location"]::after {
 
 .person-doodles path {
   fill: none;
-  stroke: #2454E0;
+  stroke: rgb(var(--color-brand));
   stroke-width: 2.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -274,32 +298,32 @@ header nav a[aria-current="location"]::after {
   inset: 0;
   pointer-events: none;
   filter:
-    drop-shadow(2px 0 0 #2454E0)
-    drop-shadow(-2px 0 0 #2454E0)
-    drop-shadow(0 2px 0 #2454E0)
-    drop-shadow(0 -2px 0 #2454E0)
-    drop-shadow(1.5px 1.5px 0 #2454E0)
-    drop-shadow(-1.5px 1.5px 0 #2454E0)
-    drop-shadow(1.5px -1.5px 0 #2454E0)
-    drop-shadow(-1.5px -1.5px 0 #2454E0);
+    drop-shadow(2px 0 0 rgb(var(--color-brand)))
+    drop-shadow(-2px 0 0 rgb(var(--color-brand)))
+    drop-shadow(0 2px 0 rgb(var(--color-brand)))
+    drop-shadow(0 -2px 0 rgb(var(--color-brand)))
+    drop-shadow(1.5px 1.5px 0 rgb(var(--color-brand)))
+    drop-shadow(-1.5px 1.5px 0 rgb(var(--color-brand)))
+    drop-shadow(1.5px -1.5px 0 rgb(var(--color-brand)))
+    drop-shadow(-1.5px -1.5px 0 rgb(var(--color-brand)));
 }
 
 .interactive-card {
-  border: 1.5px solid rgba(36, 84, 224, 0.36) !important;
+  border: 1.5px solid rgb(var(--color-brand) / 0.36) !important;
   border-radius: 5px 12px 7px 10px !important;
-  background-color: rgba(255, 255, 255, 0.84);
+  background-color: rgb(var(--color-surface) / 0.84);
   backdrop-filter: blur(5px);
-  box-shadow: 3px 3px 0 rgba(36, 84, 224, 0.12);
+  box-shadow: 3px 3px 0 rgb(var(--color-brand) / 0.12);
   transition: box-shadow 220ms ease, border-color 220ms ease;
 }
 
 .interactive-card:hover {
-  border-color: rgba(36, 84, 224, 0.72) !important;
-  box-shadow: 5px 6px 0 rgba(36, 84, 224, 0.16);
+  border-color: rgb(var(--color-brand) / 0.72) !important;
+  box-shadow: 5px 6px 0 rgb(var(--color-brand) / 0.16);
 }
 
 #habilidades .interactive-card > div:first-child {
-  border: 1px dashed rgba(36, 84, 224, 0.5);
+  border: 1px dashed rgb(var(--color-brand) / 0.5);
   border-radius: 7px 11px 6px 9px;
   transform: rotate(-3deg);
 }
@@ -307,7 +331,7 @@ header nav a[aria-current="location"]::after {
 #experiencia .experience-timeline > .absolute {
   width: 0;
   background: transparent !important;
-  border-left: 2px dashed rgba(36, 84, 224, 0.55);
+  border-left: 2px dashed rgb(var(--color-brand) / 0.55);
 }
 
 #experiencia .experience-timeline > div:not(.absolute)::before {
@@ -317,20 +341,20 @@ header nav a[aria-current="location"]::after {
   left: -28px;
   width: 12px;
   height: 2px;
-  background: #2454E0;
+  background: rgb(var(--color-brand));
   border-radius: 50%;
   transform: rotate(-18deg);
 }
 
 #sobre .bg-brandSoft {
-  border: 1.5px dashed rgba(36, 84, 224, 0.62);
-  border-left: 3px solid #2454E0;
+  border: 1.5px dashed rgb(var(--color-brand) / 0.62);
+  border-left: 3px solid rgb(var(--color-brand));
   border-radius: 5px 11px 6px 9px;
-  box-shadow: 3px 3px 0 rgba(36, 84, 224, 0.12);
+  box-shadow: 3px 3px 0 rgb(var(--color-brand) / 0.12);
 }
 
 #contato a {
-  border-bottom: 1px dashed rgba(36, 84, 224, 0.5);
+  border-bottom: 1px dashed rgb(var(--color-brand) / 0.5);
   padding-bottom: 4px;
   transition: color 160ms ease;
 }
@@ -342,19 +366,19 @@ header nav a[aria-current="location"]::after {
 }
 
 #contato a:hover {
-  color: #2454E0;
+  color: rgb(var(--color-brand));
 }
 
 #contato a > div {
-  color: #2454E0;
-  background: #DCE6FF;
-  border: 1.5px solid #2454E0;
+  color: rgb(var(--color-brand));
+  background: rgb(var(--color-brand-soft));
+  border: 1.5px solid rgb(var(--color-brand));
   border-radius: 6px 10px 5px 8px;
   transform: rotate(-3deg);
 }
 
 footer {
-  border-top: 2px dashed rgba(36, 84, 224, 0.52) !important;
+  border-top: 2px dashed rgb(var(--color-brand) / 0.52) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
