@@ -15,7 +15,7 @@ const SKILLS = [
   {
     icon: Cloud,
     title: 'Cloud Computing',
-    desc: 'Microsoft Azure e ambientes híbridos, integrando infraestrutura on-premises e cloud.',
+    desc: 'Microsoft Azure, AWS e ambientes híbridos, integrando infraestrutura on-premises e cloud.',
   },
   {
     icon: Server,

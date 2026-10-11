@@ -12,7 +12,6 @@ function getInitialTheme() {
 
 const LINKS = [
   { href: '#inicio', label: 'Início' },
-  { href: '#sobre', label: 'Sobre' },
   { href: '#habilidades', label: 'Habilidades' },
   { href: '#experiencia', label: 'Experiência' },
   { href: '#formacao', label: 'Formação' },
@@ -59,7 +58,7 @@ export default function Navbar() {
           Mateus Matos
         </div>
 
-        <div className="hidden lg:flex gap-8 text-sm font-medium">
+        <div className="hidden lg:flex gap-8 text-sm font-medium items-center">
           {LINKS.map((l) => (
             <a
               key={l.href}

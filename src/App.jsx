@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
-import About from './components/About.jsx'
 import Skills from './components/Skills.jsx'
 import Experience from './components/Experience.jsx'
 import Education from './components/Education.jsx'
@@ -17,7 +16,6 @@ export default function App() {
       <ScrollProgress />
       <Navbar />
       <Hero />
-      <MotionReveal><About /></MotionReveal>
       <MotionReveal><Skills /></MotionReveal>
       <MotionReveal><Experience /></MotionReveal>
       <MotionReveal><Education /></MotionReveal>

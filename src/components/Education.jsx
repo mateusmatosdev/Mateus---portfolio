@@ -15,17 +15,36 @@ const EDUCATION = [
 
 const CERTIFICATIONS = [
   {
+    title: 'Computação em Nuvem (AWS)',
+    org: 'Escola da Nuvem',
+    period: 'Em andamento',
+  },
+  {
+    title: 'Business AI Builder',
+    org: 'Oracle Next Education / Alura',
+    period: 'Em andamento',
+  },
+  {
+    title: 'Certificado Profissional de Segurança Cibernética do Google',
+    org: 'Coursera',
+    period: 'Em andamento',
+  },
+  {
+    title: 'Cybersecurity Essentials',
+    period: 'Concluído',
+  },
+  {
+    title: 'Santander Tech+ — Back-End',
+    period: 'Concluído',
+  },
+  {
     title: 'One AI For Tech',
+    period: 'Concluído',
   },
   {
     title: 'Capacitação em Redes 5G',
     org: 'Huawei / UFBA',
-  },
-  {
-    title: 'Santander Tech+ — Back-End',
-  },
-  {
-    title: 'Cybersecurity Essentials',
+    period: 'Concluído',
   },
 ]
 
@@ -45,7 +64,7 @@ export default function Education() {
         ))}
       </StaggerGrid>
 
-      <h3 className="text-2xl font-bold mt-14">Certificações</h3>
+      <h3 className="text-2xl font-bold mt-14">Formação / Cursos</h3>
       <StaggerGrid className="grid md:grid-cols-2 gap-5 mt-6">
         {CERTIFICATIONS.map((certificate) => (
           <StaggerItem key={certificate.title} className="interactive-card border border-line rounded-xl p-5 bg-surface">

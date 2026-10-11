@@ -7,8 +7,8 @@ export default function About() {
         <div className="kicker">Sobre mim</div>
         <h2 className="text-3xl font-bold">Da infraestrutura para a automação</h2>
       </div>
-      <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-10 lg:gap-14 items-start">
-        <div className="flex justify-center lg:justify-start">
+      <div className="grid lg:grid-cols-[0.9fr_1.4fr] gap-10 lg:gap-14 items-center">
+        <div className="flex justify-center lg:justify-start lg:self-center">
           <div className="person-stage">
             <span className="person-note" aria-hidden="true">Infra • DevOps</span>
             <svg className="person-doodles" viewBox="0 0 300 500" aria-hidden="true">
@@ -23,20 +23,16 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="space-y-4 opacity-85">
+        <div className="space-y-4 opacity-85 lg:self-center">
           <p>
-            Profissional de TI com mais de 4 anos de experiência em Infraestrutura, Suporte e Redes, com prática
-            ativa em DevOps. Atua em ambientes corporativos com administração de Windows e Linux, Active Directory,
-            Windows Server, redes Cisco e suporte de hardware e software.
+            Minha trajetória em TI começou na base da Infraestrutura, Suporte Avançado e Redes, acumulando sólida
+            experiência prática com ferramentas e ambientes corporativos como Cisco, Windows Server, Linux e Active
+            Directory. Movido pela busca por eficiência e escalabilidade, migrei minha atuação para a cultura DevOps e
+            Cloud Computing (AWS e Azure). Nessa transição, tive contato com automação de processos, construção de
+            pipelines de CI/CD (GitHub Actions, GitLab CI, Jenkins) e orquestração de fluxos via N8N. Hoje, uno minha
+            vivência em infraestrutura tradicional às melhores práticas de DevSecOps, segurança da informação e gestão
+            de incidentes, garantindo ambientes ágeis, automatizados e altamente seguros.
           </p>
-          <p>
-            Experiência com Microsoft Azure e ambientes híbridos, Git e práticas de CI/CD com Jenkins, GitHub Actions
-            e GitLab CI. Também utiliza N8N, Python e Java em automação e integração, com atenção a DevSecOps,
-            segurança da informação e gestão de incidentes.
-          </p>
-          <div className="!opacity-100 mt-2 px-5 py-4 bg-brandSoft border-l-[3px] border-brand rounded-md font-medium">
-            Foco em DevOps, CI/CD e automação, apoiado por experiência prática em infraestrutura corporativa e cloud híbrida.
-          </div>
         </div>
       </div>
     </section>

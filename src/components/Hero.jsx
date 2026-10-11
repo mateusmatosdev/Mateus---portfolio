@@ -1,12 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react'
-
-const STACK = [
-  'DevOps · CI/CD com Jenkins, GitHub Actions e GitLab CI',
-  'Git · automação de workflows com N8N',
-  'Microsoft Azure · ambientes híbridos on-premises e cloud',
-  'DevSecOps · segurança e gestão de incidentes',
-  'Python · Java · Linux',
-]
+import foto from '../../img/foto.png'
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion()
@@ -15,14 +8,20 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="section pt-16 pb-12">
-      <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 items-start">
+      <div className="grid lg:grid-cols-[1.3fr_1fr] gap-10 lg:gap-14 items-center">
         <motion.div initial={initial} animate={{ opacity: 1, y: 0 }} transition={introTransition}>
           <div className="kicker">Portfólio profissional</div>
           <h1 className="text-4xl sm:text-6xl font-bold">Mateus Matos</h1>
           <div className="text-muted text-xl mt-3">DevOps · Analista de Infraestrutura · CI/CD · Azure</div>
-          <p className="mt-5 max-w-[52ch] opacity-85">
-            Profissional de TI com mais de 4 anos de experiência em Infraestrutura, Suporte e Redes, com prática ativa em DevOps. Atuação em ambientes corporativos com Windows, Linux, Azure, Active Directory, CI/CD e automação.
+
+          <p className="mt-5 max-w-[60ch] opacity-85">
+            Profissional de TI com sólida experiência em Infraestrutura, Suporte Avançado e Redes (Cisco, Windows
+            Server, Linux e Active Directory). Atuação em DevOps, Cloud (AWS, Azure) e ambientes híbridos,
+            com foco em automação de processos, pipelines de CI/CD (GitHub Actions, GitLab CI, Jenkins) e integração
+            de fluxos via N8N, utilizando Python e Java. Experiência consolidada em segurança da informação,
+            práticas de DevSecOps e gestão eficiente de incidentes.
           </p>
+
           <div className="mt-8 flex flex-wrap gap-4">
             <motion.a
               href="#experiencia"
@@ -43,19 +42,20 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <motion.div initial={initial} animate={{ opacity: 1, y: 0 }} transition={{ ...introTransition, delay: 0.12 }}>
-          <motion.div
-            className="interactive-card bg-surface border border-line rounded-[18px] p-7 shadow-[0_20px_40px_-28px_rgba(28,35,51,0.35)]"
-            whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-            transition={{ duration: 0.22, ease: 'easeOut' }}
-          >
-            {STACK.map((item) => (
-              <div key={item} className="flex items-center gap-3 py-3 lg:py-[18px] border-b border-line last:border-none">
-                <div className="w-2.5 h-2.5 rounded-full bg-brand flex-shrink-0" />
-                <span className="text-sm opacity-85">{item}</span>
-              </div>
-            ))}
-          </motion.div>
+        <motion.div initial={initial} animate={{ opacity: 1, y: 0 }} transition={{ ...introTransition, delay: 0.12 }} className="flex justify-center lg:justify-end">
+          <div className="person-stage">
+            <span className="person-note" aria-hidden="true">Infra • DevOps</span>
+            <svg className="person-doodles" viewBox="0 0 300 500" aria-hidden="true">
+              <path d="M 267 43 C 300 54 302 88 281 105 C 260 122 237 109 229 88" />
+              <path d="M 229 88 L 230 101 M 229 88 L 242 91" />
+              <path d="M 8 92 Q 5 92 5 95 L 5 112 Q 5 115 8 115 L 20 115 L 20 120 L 13 120 Q 11 120 11 122 L 35 122 Q 35 120 33 120 L 26 120 L 26 115 L 38 115 Q 41 115 41 112 L 41 95 Q 41 92 38 92 Z" />
+              <path d="M 10 97 L 36 97 L 36 110 L 10 110 Z M 15 106 L 20 101 L 24 105 L 31 99" />
+            </svg>
+            <div className="person-photo">
+              <img src={foto} alt="" aria-hidden="true" className="person-photo-outline" />
+              <img src={foto} alt="Mateus Matos" className="person-photo-image" />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
